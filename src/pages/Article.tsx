@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 import Newsletter from '@/components/Newsletter';
+import Footer from '@/components/Footer';
 
 const categories = [
   { id: 'tech', name: 'Технологии', icon: 'Cpu' },
@@ -290,6 +291,8 @@ const Article = () => {
           color: hsl(240 6% 25%);
         }
       `}</style>
+
+      <Footer />
     </div>
   );
 };

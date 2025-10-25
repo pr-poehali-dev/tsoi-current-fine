@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 import Newsletter from '@/components/Newsletter';
+import Footer from '@/components/Footer';
 
 const categories = [
   { id: 'all', name: 'Все статьи', icon: 'LayoutGrid' },
@@ -162,6 +163,7 @@ const Index = () => {
           <Newsletter />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
