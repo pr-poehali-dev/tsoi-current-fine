@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
+import Newsletter from '@/components/Newsletter';
 
 const categories = [
   { id: 'tech', name: 'Технологии', icon: 'Cpu' },
@@ -226,8 +227,12 @@ const Article = () => {
             dangerouslySetInnerHTML={{ __html: article.content }}
           />
 
+          <div className="mt-12 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <Newsletter />
+          </div>
+
           {relatedArticles.length > 0 && (
-            <section className="mt-16 pt-8 border-t animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <section className="mt-16 pt-8 border-t animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <h2 className="text-3xl font-bold mb-6">Похожие статьи</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {relatedArticles.map((related) => (

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
+import Newsletter from '@/components/Newsletter';
 
 const categories = [
   { id: 'all', name: 'Все статьи', icon: 'LayoutGrid' },
@@ -156,6 +157,10 @@ const Index = () => {
             </p>
           </div>
         )}
+
+        <div className="mt-16 mb-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <Newsletter />
+        </div>
       </div>
     </div>
   );
