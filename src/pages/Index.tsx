@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
@@ -106,11 +107,11 @@ const Index = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {filteredArticles.map((article, index) => (
-            <Card
-              key={article.id}
-              className="group overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 animate-scale-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
+            <Link key={article.id} to={`/article/${article.id}`}>
+              <Card
+                className="group overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 animate-scale-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
               <div className="relative overflow-hidden aspect-video">
                 <img
                   src={article.image}
@@ -141,7 +142,8 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-            </Card>
+              </Card>
+            </Link>
           ))}
         </div>
 
