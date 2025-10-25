@@ -5,6 +5,8 @@ import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 import Newsletter from '@/components/Newsletter';
 import Footer from '@/components/Footer';
+import SearchBar from '@/components/SearchBar';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const categories = [
   { id: 'all', name: 'Все статьи', icon: 'LayoutGrid' },
@@ -79,15 +81,17 @@ const Index = () => {
     : articles.filter(article => article.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 dark:from-gray-900 dark:via-purple-950 dark:to-pink-950">
+      <ThemeToggle />
       <div className="container mx-auto px-4 py-8 md:py-16">
         <header className="text-center mb-12 md:mb-16 animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
             Блог
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
             Современные идеи о технологиях, дизайне и развитии
           </p>
+          <SearchBar articles={articles} />
         </header>
 
         <div className="flex flex-wrap gap-3 justify-center mb-12 animate-fade-in" style={{ animationDelay: '0.1s' }}>

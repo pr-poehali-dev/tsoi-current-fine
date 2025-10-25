@@ -5,6 +5,7 @@ import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 import Newsletter from '@/components/Newsletter';
 import Footer from '@/components/Footer';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const categories = [
   { id: 'tech', name: 'Технологии', icon: 'Cpu' },
@@ -178,7 +179,8 @@ const Article = () => {
   const categoryData = categories.find(c => c.id === article.category);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 dark:from-gray-900 dark:via-purple-950 dark:to-pink-950">
+      <ThemeToggle />
       <div className="container mx-auto px-4 py-8">
         <Link to="/">
           <Button variant="ghost" className="mb-6 group">
